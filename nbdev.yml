@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nbdev-experiment"
+  site-url: "https://eitanlees.github.io/nbdev-experiment"
+  description: "Experimenting with nbdev"
+  repo-branch: master
+  repo-url: "https://github.com/eitanlees/nbdev-experiment"
