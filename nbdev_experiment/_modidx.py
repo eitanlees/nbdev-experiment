@@ -5,4 +5,10 @@ d = { 'settings': { 'branch': 'master',
                 'doc_host': 'https://eitanlees.github.io',
                 'git_url': 'https://github.com/eitanlees/nbdev-experiment',
                 'lib_path': 'nbdev_experiment'},
-  'syms': {'nbdev_experiment.core': {'nbdev_experiment.core.foo': ('core.html#foo', 'nbdev_experiment/core.py')}}}
+  'syms': { 'nbdev_experiment.core': {'nbdev_experiment.core.foo': ('core.html#foo', 'nbdev_experiment/core.py')},
+            'nbdev_experiment.nbdev_experiment': { 'nbdev_experiment.nbdev_experiment.foo': ( 'core.html#foo',
+                                                                                              'nbdev_experiment/nbdev_experiment.py')},
+            'nbdev_experiment.sample_module': { 'nbdev_experiment.sample_module.hello': ( 'sample_module.html#hello',
+                                                                                          'nbdev_experiment/sample_module.py'),
+                                                'nbdev_experiment.sample_module.say_hello': ( 'sample_module.html#say_hello',
+                                                                                              'nbdev_experiment/sample_module.py')}}}
