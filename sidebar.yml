@@ -2,4 +2,5 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - 00_sample_module.ipynb
+      - 00_card.ipynb
+      - 01_deck.ipynb
