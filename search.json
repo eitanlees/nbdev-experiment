@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev-experiment",
+    "section": "",
+    "text": "An example of nbdev which creates a deck class"
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev-experiment",
+    "section": "Install",
+    "text": "Install\npip install nbdev_experiment"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nbdev-experiment",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\nc = Card(1, 2)\nc\n\n2♥️\n\n\n\nCard(suit=1, rank=3) > Card(suit=1, rank=2)\n\nTrue\n\n\n\nd = Deck()\n\n\nd.shuffle()\n\n\nd\n\n3♠️; 7♠️; 5♠️; 2♥️; 4♥️; 10♠️; 7♣️; 6♥️; 10♥️; Q♠️; 4♣️; K♣️; 3♦️; 2♦️; A♥️; K♠️; 7♥️; 5♦️; 2♠️; 4♠️; 10♣️; 9♦️; 6♠️; 8♦️; 6♣️; 8♥️; 3♣️; A♣️; J♦️; 8♣️; Q♦️; J♥️; J♠️; 3♥️; 8♠️; 4♦️; A♦️; A♠️; 5♣️; 2♣️; K♦️; 7♦️; K♥️; 9♣️; J♣️; 9♠️; 6♦️; 10♦️; 5♥️; Q♥️; 9♥️; Q♣️"
+  },
+  {
+    "objectID": "card.html",
+    "href": "card.html",
+    "title": "Card Module",
+    "section": "",
+    "text": "We will be using number to represent a playing card suit and rank. These are the suits:\nFor example the suit at index 0:\nThe ranks are:\nFor instance the rank at index 1 is (Note that the rank at index 0 is none, as we want to ranks to match the indices):\nsource"
+  },
+  {
+    "objectID": "card.html#comparison-operators",
+    "href": "card.html#comparison-operators",
+    "title": "Card Module",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators\nEquality, greater than, and less than\n\ntest_eq(Card(suit=1, rank=3), Card(suit=1, rank=3))\ntest_ne(Card(suit=2, rank=3), Card(suit=1, rank=3))\ntest_ne(Card(suit=1, rank=2), Card(suit=1, rank=3))\n\n\nassert Card(suit=1, rank=3) > Card(suit=1, rank=2)\nassert Card(suit=2, rank=3) > Card(suit=1, rank=3)\nassert not Card(suit=1, rank=2) > Card(suit=1, rank=3)\n\n\nassert Card(suit=1, rank=2) < Card(suit=1, rank=3)\nassert Card(suit=1, rank=2) < Card(suit=2, rank=2)\nassert not Card(suit=1, rank=3) < Card(suit=1, rank=2)"
+  },
+  {
+    "objectID": "deck.html",
+    "href": "deck.html",
+    "title": "Deck Module",
+    "section": "",
+    "text": "source\n\nDeck\n\n Deck ()\n\nA deck of 52 cards\nWhen we initially create a deck, all cards will be presend\n\ndeck = Deck()\ndeck\n\nA♠️; 2♠️; 3♠️; 4♠️; 5♠️; 6♠️; 7♠️; 8♠️; 9♠️; 10♠️; J♠️; Q♠️; K♠️; A♥️; 2♥️; 3♥️; 4♥️; 5♥️; 6♥️; 7♥️; 8♥️; 9♥️; 10♥️; J♥️; Q♥️; K♥️; A♣️; 2♣️; 3♣️; 4♣️; 5♣️; 6♣️; 7♣️; 8♣️; 9♣️; 10♣️; J♣️; Q♣️; K♣️; A♦️; 2♦️; 3♦️; 4♦️; 5♦️; 6♦️; 7♦️; 8♦️; 9♦️; 10♦️; J♦️; Q♦️; K♦️\n\n\n\ntest_eq(len(deck), 52)\n\nAs a reminder these are the suits we defined for Card\n\nsuits\n\n['♠️', '♥️', '♣️', '♦️']\n\n\nWe can check if the Ace of Spades in the deck\n\nCard(0, 1) in deck\n\nTrue\n\n\n\nsource\n\n\nDeck.pop\n\n Deck.pop (idx:int=-1)\n\nRemove and return one card\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nidx\nint\n-1\nIndex of the card to remove, defaulting to the last card\n\n\n\n\ndeck = Deck()\ntest_eq(deck.pop(), Card(3, 13)) # K♦️\n\n\nsource\n\n\nDeck.remove\n\n Deck.remove (card:nbdev_experiment.card.Card)\n\nRemoves card from deck and raises an exception if not there\n\n\n\n\nType\nDetails\n\n\n\n\ncard\nCard\nA card to remove\n\n\n\n\nthree_of_clubs = Card(2,3)\ndeck.remove(three_of_clubs)\n\n\nassert three_of_clubs not in deck\n\n\nsource\n\n\nDeck.shuffle\n\n Deck.shuffle ()\n\nShuffle the cards in a deck\n\nd = Deck()\n\n\nd\n\nA♠️; 2♠️; 3♠️; 4♠️; 5♠️; 6♠️; 7♠️; 8♠️; 9♠️; 10♠️; J♠️; Q♠️; K♠️; A♥️; 2♥️; 3♥️; 4♥️; 5♥️; 6♥️; 7♥️; 8♥️; 9♥️; 10♥️; J♥️; Q♥️; K♥️; A♣️; 2♣️; 3♣️; 4♣️; 5♣️; 6♣️; 7♣️; 8♣️; 9♣️; 10♣️; J♣️; Q♣️; K♣️; A♦️; 2♦️; 3♦️; 4♦️; 5♦️; 6♦️; 7♦️; 8♦️; 9♦️; 10♦️; J♦️; Q♦️; K♦️\n\n\n\nd.shuffle()\n\n\nd\n\nJ♣️; 5♦️; 5♥️; K♣️; 4♠️; 3♣️; Q♠️; 8♦️; 7♥️; J♦️; 6♦️; A♦️; 4♣️; 9♦️; 2♠️; K♦️; 10♦️; 3♠️; Q♣️; 4♥️; 7♣️; J♥️; 8♣️; 4♦️; 6♥️; K♥️; 7♠️; 5♠️; 9♠️; A♥️; 2♦️; 9♣️; 8♠️; 3♥️; 5♣️; 2♣️; J♠️; 6♠️; 3♦️; 10♥️; 10♠️; 7♦️; 10♣️; A♣️; 2♥️; 9♥️; A♠️; K♠️; Q♥️; 8♥️; 6♣️; Q♦️\n\n\n\nsource\n\n\ndraw_n\n\n draw_n (n:int, replace:bool=True)\n\nDraw n cards from a deck with replacement (if replace=True)\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nn\nint\n\nNumber of cards to draw\n\n\nreplace\nbool\nTrue\nwheather or not you want replacement\n\n\n\n\ndraw_n(5)\n\n[Q♣️, 3♣️, K♦️, A♣️, 6♠️]"
+  }
+]
